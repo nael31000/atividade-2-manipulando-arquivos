@@ -1,0 +1,38 @@
+=======================posto de Gasolina=====================
+Carro-ABC-1234
+ Combustivel: Etanol
+Valor :R$ 50.00
+
+Moto-DEF-5678
+ Combustivel: Gasolina
+Valor :R$ 25.00
+
+Van Escolar-GHI-9012
+ Combustivel: Diesel
+Valor :R$ 200.00
+
+Camihonete-ABC-1284
+ Combustivel: Gasolina
+Valor :R$ 200.00
+
+SUV-ABC-1122
+ Combustivel: Gasolina
+Valor :R$ 250.00
+
+Esportivo-ABC-1004
+ Combustivel: Gasolina
+Valor :R$ 180.00
+
+Caminhao-ABC-1200
+ Combustivel: Diesel
+Valor :R$ 500.00
+
+Compacto-ABC-1300
+ Combustivel: Etanol
+Valor :R$ 50.00
+
+===
+Etanol: = R$100.00
+Gasolina:=R$655.00
+Diesel:=R$700.00
+ total do dia: = R$1455.00
