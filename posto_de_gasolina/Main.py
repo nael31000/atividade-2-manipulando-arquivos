@@ -2,18 +2,11 @@ from Combustivel import Combustivel
 from Veiculo import Veiculo
 from Abastecimento import Abastecimento
 
-
-# ==========================================
-# COMBUSTÍVEIS
-# ==========================================
 etanol = Combustivel("Etanol")
 gasolina = Combustivel("Gasolina")
 diesel = Combustivel("Diesel")
 
 
-# ==========================================
-# VEÍCULOS
-# ==========================================
 carro = Veiculo("Carro", "ABC-1234")
 moto = Veiculo("Moto", "DEF-5678")
 van = Veiculo("Van Escolar", "GHI-9012")
@@ -25,9 +18,6 @@ caminhao = Veiculo("Caminhao", "ABC-1200")
 compacto = Veiculo("Compacto", "ABC-1300")
 
 
-# ==========================================
-# ABASTECIMENTOS
-# ==========================================
 abastecimento1 = Abastecimento(carro, etanol, 50)
 abastecimento2 = Abastecimento(moto, gasolina, 25)
 abastecimento3 = Abastecimento(van, diesel, 200)
@@ -39,9 +29,6 @@ abastecimento7 = Abastecimento(caminhao, diesel, 500)
 abastecimento8 = Abastecimento(compacto, etanol, 50)
 
 
-# ==========================================
-# LISTA DE ABASTECIMENTOS
-# ==========================================
 abastecimentos = [
     abastecimento1,
     abastecimento2,
@@ -54,18 +41,12 @@ abastecimentos = [
 ]
 
 
-# ==========================================
-# MOSTRANDO OS ABASTECIMENTOS
-# ==========================================
 print("========== ABASTECIMENTOS DO DIA ==========")
 
 for abastecimento in abastecimentos:
     abastecimento.mostrar_abastecimento()
 
 
-# ==========================================
-# TOTAL DE VENDAS POR COMBUSTÍVEL
-# ==========================================
 total_etanol = 0
 total_gasolina = 0
 total_diesel = 0
@@ -82,15 +63,9 @@ for abastecimento in abastecimentos:
         total_diesel += abastecimento.valor
 
 
-# ==========================================
-# TOTAL DO DIA
-# ==========================================
 total_dia = total_etanol + total_gasolina + total_diesel
 
 
-# ==========================================
-# ESCREVENDO O RECIBO
-# ==========================================
 with open("recibo_posto.txt", "w", encoding="utf-8") as arquivo:
 
     arquivo.write("========== POSTO DE GASOLINA ==========\n")
@@ -118,20 +93,13 @@ with open("recibo_posto.txt", "w", encoding="utf-8") as arquivo:
     arquivo.write(f"TOTAL DO DIA: R$ {total_dia:.2f}\n")
 
 
-# ==========================================
-# LENDO O RECIBO
-# ==========================================
 with open("recibo_posto.txt", "r", encoding="utf-8") as arquivo:
 
     texto = arquivo.read()
 
-    # Mostra o recibo inteiro no terminal
     print("\n========== CONTEÚDO DO RECIBO ==========\n")
     print(texto)
 
-    # --------------------------------------
-    # ENCONTRANDO O TOTAL DE ETANOL
-    # --------------------------------------
     posicao_etanol = texto.find("Etanol:")
     fim_linha = texto.find("\n", posicao_etanol)
 
@@ -139,9 +107,6 @@ with open("recibo_posto.txt", "r", encoding="utf-8") as arquivo:
         posicao_etanol + len("Etanol:"):fim_linha
     ].strip()
 
-    # --------------------------------------
-    # ENCONTRANDO O TOTAL DE GASOLINA
-    # --------------------------------------
     posicao_gasolina = texto.find("Gasolina:")
     fim_linha = texto.find("\n", posicao_gasolina)
 
@@ -149,9 +114,6 @@ with open("recibo_posto.txt", "r", encoding="utf-8") as arquivo:
         posicao_gasolina + len("Gasolina:"):fim_linha
     ].strip()
 
-    # --------------------------------------
-    # ENCONTRANDO O TOTAL DE DIESEL
-    # --------------------------------------
     posicao_diesel = texto.find("Diesel:")
     fim_linha = texto.find("\n", posicao_diesel)
 
@@ -159,9 +121,6 @@ with open("recibo_posto.txt", "r", encoding="utf-8") as arquivo:
         posicao_diesel + len("Diesel:"):fim_linha
     ].strip()
 
-    # --------------------------------------
-    # ENCONTRANDO O TOTAL DO DIA
-    # --------------------------------------
     posicao_total_dia = texto.find("TOTAL DO DIA:")
     fim_linha = texto.find("\n", posicao_total_dia)
 
@@ -170,9 +129,6 @@ with open("recibo_posto.txt", "r", encoding="utf-8") as arquivo:
     ].strip()
 
 
-# ==========================================
-# MOSTRANDO OS VALORES ENCONTRADOS
-# ==========================================
 print("========== TOTAIS ENCONTRADOS NO TXT ==========")
 
 print(f"Total ganho Etanol: {etanol_texto}")
